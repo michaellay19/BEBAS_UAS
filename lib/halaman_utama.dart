@@ -1,3 +1,5 @@
+import 'package:bebas_uas/components/appbar.dart';
+import 'package:bebas_uas/pages/home.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
@@ -14,10 +16,7 @@ class _HalamanUtamaState extends State<HalamanUtama> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+    Home(),
     Text(
       'Index 1: Business',
       style: optionStyle,
@@ -45,122 +44,16 @@ class _HalamanUtamaState extends State<HalamanUtama> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 31, 195, 36),
-        title: const Text('Wellcome, Someone'),
-        actions: [
-          Container(
-            width: 175,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Icon(
-                      Icons.mail,
-                    ),
-                    Positioned(
-                      top: 10,
-                      right: 0,
-                      child: Container(
-                        width: 15,
-                        height: 13,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.red),
-                        child: Text(
-                          "0",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Icon(
-                      Icons.notifications,
-                    ),
-                    Positioned(
-                      top: 10,
-                      right: 0,
-                      child: Container(
-                        width: 15,
-                        height: 13,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.red),
-                        child: Text(
-                          "0",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Icon(
-                      Icons.shopping_cart,
-                    ),
-                    Positioned(
-                      top: 10,
-                      right: 0,
-                      child: Container(
-                        width: 15,
-                        height: 13,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.red),
-                        child: Text(
-                          "0",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Icon(
-                      Icons.menu,
-                    ),
-                    Positioned(
-                      top: 15,
-                      right: 0,
-                      child: Container(
-                        width: 10,
-                        height: 10,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.red),
-                      ),
-                    )
-                  ],
-                )
-              ],
+      backgroundColor: Color.fromARGB(255, 31, 195, 36),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Appbarcom(),
+            Center(
+              child: _widgetOptions.elementAt(_selectedIndex),
             ),
-          )
-        ],
-      ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
