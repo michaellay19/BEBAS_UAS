@@ -23,7 +23,7 @@ class _RegisterPageState extends State<RegisterPage> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          "Sign Up",
+          "Daftar",
           style: TextStyle(
             color: Colors.black,
           ),
@@ -95,7 +95,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     fillColor: Colors.grey[250],
                     filled: true,
-                    hintText: 'Confirm Password',
+                    hintText: 'Konfirmasi Password',
                     hintStyle: TextStyle(color: Colors.grey[500])),
               ),
             ),
@@ -110,13 +110,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   showDialog(
                     context: context,
                     builder: (context) =>
-                        errorDialog(context, 'Fill all textfield'),
+                        errorDialog(context, 'Isi semua form'),
                   );
                 } else if (passwordController.text != confirmController.text) {
                   showDialog(
                     context: context,
                     builder: (context) =>
-                        errorDialog(context, 'Password are not the same'),
+                        errorDialog(context, 'Password tidak sama'),
                   );
                 } else {
                   showDialog(
@@ -134,7 +134,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 child: Center(
                   child: Text(
-                    'Sign Up',
+                    'Daftar',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -151,7 +151,7 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Already have an account?',
+                  'Sudah punya akun?',
                   style: TextStyle(fontSize: 16),
                 ),
                 TextButton(
@@ -183,7 +183,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
 errorDialog(BuildContext context, String msg) {
   return AlertDialog(
-    title: const Text('Sign Up Error!'),
+    title: const Text('Gagal Mendaftar!'),
     content: Text(msg),
     actions: [
       TextButton(
@@ -198,8 +198,8 @@ errorDialog(BuildContext context, String msg) {
 
 successDialog(BuildContext context) {
   return AlertDialog(
-    title: const Text('Sign Up Success!'),
-    content: const Text('Data has been saved'),
+    title: const Text('Pendaftaran Sukses!'),
+    content: const Text('Data telah disimpan'),
     actions: [
       TextButton(
         onPressed: () {

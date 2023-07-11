@@ -84,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     fillColor: Colors.grey[250],
                     filled: true,
-                    hintText: 'Username',
+                    hintText: 'Password',
                     hintStyle: TextStyle(color: Colors.grey[500])),
               ),
             ),
@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    'Forgot Password?',
+                    'Lupa Password?',
                     style: TextStyle(color: Colors.green),
                   )
                 ],
@@ -120,7 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
                   Text(
-                    'Remember me',
+                    'Ingat Saya',
                     style: TextStyle(color: Colors.grey[700]),
                   )
                 ],
@@ -173,7 +173,7 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Don\'t have an account?',
+                  'Belum punya akun?',
                   style: TextStyle(fontSize: 16),
                 ),
                 TextButton(
@@ -186,7 +186,7 @@ class _LoginPageState extends State<LoginPage> {
                     );
                   },
                   child: const Text(
-                    'Sign up',
+                    'Daftar',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.green,
