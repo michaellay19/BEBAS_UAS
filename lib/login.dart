@@ -98,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Text(
                     'Forgot Password?',
-                    style: TextStyle(color: Colors.grey[700]),
+                    style: TextStyle(color: Colors.green),
                   )
                 ],
               ),
@@ -151,7 +151,7 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.all(20),
                 margin: const EdgeInsets.symmetric(horizontal: 30),
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Colors.green,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Center(
@@ -189,7 +189,7 @@ class _LoginPageState extends State<LoginPage> {
                     'Sign up',
                     style: TextStyle(
                       fontSize: 16,
-                      color: Colors.black,
+                      color: Colors.green,
                       decoration: TextDecoration.underline,
                     ),
                   ),

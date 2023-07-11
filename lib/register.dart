@@ -129,7 +129,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 padding: const EdgeInsets.all(20),
                 margin: const EdgeInsets.symmetric(horizontal: 30),
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Colors.green,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Center(
@@ -167,7 +167,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     'Login',
                     style: TextStyle(
                       fontSize: 16,
-                      color: Colors.black,
+                      color: Colors.green,
                       decoration: TextDecoration.underline,
                     ),
                   ),
