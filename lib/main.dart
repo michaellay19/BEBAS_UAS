@@ -1,13 +1,17 @@
 import 'package:bebas_uas/halaman_utama.dart';
+import 'package:bebas_uas/pages/provider.dart';
 import 'package:flutter/material.dart';
+import "package:provider/provider.dart";
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [ChangeNotifierProvider(create: (_) => TProvider())],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
 
   @override
   Widget build(BuildContext context) {

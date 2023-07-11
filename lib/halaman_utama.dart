@@ -1,4 +1,5 @@
 import 'package:bebas_uas/components/appbar.dart';
+import 'package:bebas_uas/pages/feed.dart';
 import 'package:bebas_uas/pages/home.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -17,10 +18,7 @@ class _HalamanUtamaState extends State<HalamanUtama> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Home(),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
+    Feed(),
     Text(
       'Index 2: School',
       style: optionStyle,
