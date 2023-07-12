@@ -1,3 +1,4 @@
+import 'package:bebas_uas/halaman_utama.dart';
 import 'package:flutter/material.dart';
 
 class AboutUsPage extends StatefulWidget {
@@ -57,6 +58,15 @@ class _AboutUsPageState extends State<AboutUsPage> {
                     ),
                   ],
                 ),
+                SizedBox(height: 16.0),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HalamanUtama()),
+                      );
+                    },
+                    child: Text('Next'))
               ],
             )
           ],
