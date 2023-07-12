@@ -1,9 +1,11 @@
 import 'package:bebas_uas/components/appbar.dart';
 import 'package:bebas_uas/pages/feed.dart';
 import 'package:bebas_uas/pages/home.dart';
+import 'package:bebas_uas/provider/provider.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HalamanUtama extends StatefulWidget {
   const HalamanUtama({super.key});
@@ -16,7 +18,7 @@ class _HalamanUtamaState extends State<HalamanUtama> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  static List<Widget> _widgetOptions = <Widget>[
     Home(),
     Feed(),
     Text(
@@ -41,12 +43,15 @@ class _HalamanUtamaState extends State<HalamanUtama> {
 
   @override
   Widget build(BuildContext context) {
+      final prov = Provider.of<TProvider>(context);
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 31, 195, 36),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Appbarcom(),
+            Appbarcom(
+              username: prov.username,
+            ),
             Center(
               child: _widgetOptions.elementAt(_selectedIndex),
             ),

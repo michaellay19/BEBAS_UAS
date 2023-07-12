@@ -1,4 +1,4 @@
-import 'package:bebas_uas/pages/provider.dart';
+import 'package:bebas_uas/provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -49,13 +49,13 @@ class _FeedState extends State<Feed> {
                 onPressed: () {
                   if (feedcontroller.text == "") {
                   } else {
-                    prov.addcomment("username", feedcontroller.text);
+                    prov.addcomment(prov.username, feedcontroller.text);
                     print(feedcontroller.text);
                     feedcontroller.clear();
                     final snackBar1 = SnackBar(
-                        content: const Text('You post a new feed!'),
-                      );
-                      ScaffoldMessenger.of(context).showSnackBar(snackBar1);
+                      content: const Text('You post a new feed!'),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar1);
                   }
                 },
               ),
@@ -145,9 +145,9 @@ class _FeedCardState extends State<FeedCard> {
                       if (_iconColor == Colors.red) {
                         _iconColor = Colors.grey;
                         final snackBar1 = SnackBar(
-                        content: const Text('You unlike this comment!'),
-                      );
-                      ScaffoldMessenger.of(context).showSnackBar(snackBar1);
+                          content: const Text('You unlike this comment!'),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar1);
                       } else if (_iconColor == Colors.grey)
                         _iconColor = Colors.red;
                     });

@@ -1,4 +1,4 @@
-import 'package:bebas_uas/pages/provider.dart';
+import 'package:bebas_uas/provider/provider.dart';
 import 'package:bebas_uas/login.dart';
 import 'package:flutter/material.dart';
 import "package:provider/provider.dart";

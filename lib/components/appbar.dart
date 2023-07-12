@@ -1,9 +1,11 @@
+import 'package:bebas_uas/pages/chat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class Appbarcom extends StatefulWidget {
-  const Appbarcom({super.key});
+  final String username;
+  const Appbarcom({super.key, required this.username});
 
   @override
   State<Appbarcom> createState() => _AppbarcomState();
@@ -13,7 +15,7 @@ class _AppbarcomState extends State<Appbarcom> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20,left: 20,right: 20),
+      padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -31,7 +33,7 @@ class _AppbarcomState extends State<Appbarcom> {
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0),
                   child: Text(
-                    "Wellcome Michael Lay",
+                    "Wellcome ${widget.username}",
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                 ),
@@ -46,8 +48,14 @@ class _AppbarcomState extends State<Appbarcom> {
                 Stack(
                   alignment: Alignment.center,
                   children: [
-                    Icon(
-                      Icons.mail_outline,
+                    IconButton(
+                      icon: Icon(Icons.mail_outline),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => ChatPage())));
+                      },
                       color: Colors.white,
                     ),
                     Positioned(

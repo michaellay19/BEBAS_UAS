@@ -1,6 +1,7 @@
+import 'package:bebas_uas/halaman_utama.dart';
+import 'package:bebas_uas/provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:bebas_uas/register.dart';
-// import 'package:hexagram/provider/account_provider.dart';
 import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
@@ -25,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    // final prov = Provider.of<AccountProvider>(context);
+    final prov = Provider.of<TProvider>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -131,6 +132,18 @@ class _LoginPageState extends State<LoginPage> {
             ),
             GestureDetector(
               onTap: () {
+                if (usernameController.text == "" ||
+                    passwordController.text == "") {
+                  final snackBar1 = SnackBar(
+                    content: const Text('Input Username or Password !!!'),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar1);
+                } else {
+                  prov.username = usernameController.text;
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HalamanUtama()));
+                }
+
                 // prov.login(usernameController.text, passwordController.text);
                 // if (prov.data == null) {
                 //   showDialog(
