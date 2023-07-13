@@ -1,5 +1,8 @@
+import 'package:bebas_uas/aboutus.dart';
+import 'package:bebas_uas/provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:bebas_uas/login.dart';
+import 'package:provider/provider.dart';
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({super.key});
@@ -17,6 +20,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
+    final prov = Provider.of<TProvider>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -123,6 +127,10 @@ class _RegisterPageState extends State<RegisterPage> {
                     context: context,
                     builder: (context) => successDialog(context),
                   );
+                  prov.username = usernameController.text;
+                  prov.saldo = 100000;
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AboutUsPage()));
                 }
               },
               child: Container(

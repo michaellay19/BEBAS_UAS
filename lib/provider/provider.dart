@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class TProvider extends ChangeNotifier {
-  String username = "Guest";
+  String username = "";
+  int saldo = 0;
+  String pin = "0000";
+  String saldosementara = "";
+  String statement = "";
+
   List listfeedcomment = [
     {
       "username": "Louis Lie",
@@ -12,32 +17,27 @@ class TProvider extends ChangeNotifier {
     {"username": "Victor", "comment": "CBB cuman bisa beatrix hha"},
   ];
 
+  List users = [
+    {
+      "username": "Michael Lay",
+      "pin": "0000",
+      "saldo": 150000,
+    },
+  ];
+
+  void addsaldo(int saldomasuk) {
+    saldo = saldo + saldomasuk;
+    notifyListeners();
+  }
+
+void minsaldo(int saldomasuk) {
+    saldo = saldo - saldomasuk;
+    notifyListeners();
+  }
+
   void addcomment(String username, String comment) {
     listfeedcomment
         .insert(0, {"username": "${username}", "comment": "${comment}"});
     notifyListeners();
   }
-
-  List listUserTopUp = [
-    {
-      "username": "Louis Lie",
-      "pin": "123456",
-      "saldo": 150000,
-    },
-    {
-      "username": "Hansen Tanio",
-      "pin": "234567",
-      "saldo": 50000,
-    },
-    {
-      "username": "Pieter Vardi",
-      "pin": "345678",
-      "saldo": 80000,
-    },
-    {
-      "username": "Victor",
-      "pin": "456789",
-      "saldo": 20000,
-    },
-  ];
 }

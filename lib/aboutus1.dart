@@ -1,13 +1,12 @@
-import 'package:bebas_uas/aboutus1.dart';
 import 'package:bebas_uas/halaman_utama.dart';
 import 'package:flutter/material.dart';
 
-class AboutUsPage extends StatefulWidget {
+class AboutUsPage2 extends StatefulWidget {
   @override
-  _AboutUsPageState createState() => _AboutUsPageState();
+  _AboutUsPage2State createState() => _AboutUsPage2State();
 }
 
-class _AboutUsPageState extends State<AboutUsPage> {
+class _AboutUsPage2State extends State<AboutUsPage2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +19,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
             Column(
               children: [
                 Text(
-                  'Tentang Tokopedia',
+                  'Selamat Datang',
                   style: TextStyle(
                       fontSize: 40.0,
                       fontWeight: FontWeight.bold,
@@ -40,8 +39,11 @@ class _AboutUsPageState extends State<AboutUsPage> {
             Padding(
               padding: EdgeInsets.only(top: 20.0),
               child: Text(
-                'Kami sering dipandang sebagai perusahaan Indonesia yang melewati jalan yang mulus. Namun, kami selalu menganggap diri kami sebagai startup penuh energi yang semakin kuat berjuang melewati berbagai tantangan sulit setiap hari.',
-                style: TextStyle(fontSize: 18.0, color: Colors.white),
+                'KAMI MEMBERIKAN HADIAH SEBESAR Rp. 100.000 SELAMAT BERBELANJA.',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'RobotoMono',
+                    color: Colors.white),
               ),
             ),
             SizedBox(height: 24.0),
@@ -76,11 +78,11 @@ class _AboutUsPageState extends State<AboutUsPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => AboutUsPage2()),
+                      MaterialPageRoute(builder: (context) => HalamanUtama()),
                     );
                   },
                   child: Text(
-                    'Next',
+                    'Selamat Berbelanja....',
                     style: TextStyle(fontSize: 25.0, color: Colors.black),
                   )),
             ),

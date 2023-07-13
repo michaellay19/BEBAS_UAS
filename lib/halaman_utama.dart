@@ -3,6 +3,7 @@ import 'package:bebas_uas/pages/feed.dart';
 import 'package:bebas_uas/pages/home.dart';
 import 'package:bebas_uas/pages/setting.dart';
 import 'package:bebas_uas/provider/provider.dart';
+import 'package:bebas_uas/topup.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
@@ -22,10 +23,7 @@ class _HalamanUtamaState extends State<HalamanUtama> {
   static List<Widget> _widgetOptions = <Widget>[
     Home(),
     Feed(),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+    TopUpPage(),
     Text(
       'Index 2: School',
       style: optionStyle,
@@ -66,8 +64,8 @@ class _HalamanUtamaState extends State<HalamanUtama> {
             label: 'Feed',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'Official Store',
+            icon: Icon(Icons.money),
+            label: 'TOP UP',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite_border_outlined),

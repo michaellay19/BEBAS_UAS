@@ -112,9 +112,9 @@ class _HomeState extends State<Home> {
                             ),
                           ],
                         ),
-                        Text("Rp. 10.000.000"),
+                        Text("Rp. ${prov.saldo.toString()}"),
                         Text(
-                          "20.000.000 Coins",
+                          "10.000.000 Coins",
                           style: TextStyle(color: Colors.grey),
                         )
                       ],
