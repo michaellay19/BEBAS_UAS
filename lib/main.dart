@@ -1,5 +1,6 @@
 import 'package:bebas_uas/provider/provider.dart';
 import 'package:bebas_uas/login.dart';
+import 'package:bebas_uas/topup.dart';
 import 'package:flutter/material.dart';
 import "package:provider/provider.dart";
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: TopUpPage(),
     );
   }
 }

@@ -17,4 +17,27 @@ class TProvider extends ChangeNotifier {
         .insert(0, {"username": "${username}", "comment": "${comment}"});
     notifyListeners();
   }
+
+  List listUserTopUp = [
+    {
+      "username": "Louis Lie",
+      "pin": "123456",
+      "saldo": 150000,
+    },
+    {
+      "username": "Hansen Tanio",
+      "pin": "234567",
+      "saldo": 50000,
+    },
+    {
+      "username": "Pieter Vardi",
+      "pin": "345678",
+      "saldo": 80000,
+    },
+    {
+      "username": "Victor",
+      "pin": "456789",
+      "saldo": 20000,
+    },
+  ];
 }
