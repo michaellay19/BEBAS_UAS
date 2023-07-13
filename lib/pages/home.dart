@@ -1,6 +1,10 @@
+import 'package:bebas_uas/provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:provider/provider.dart';
+
+import '../components/appbar.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -22,7 +26,11 @@ class _HomeState extends State<Home> {
   ];
   @override
   Widget build(BuildContext context) {
+    final prov = Provider.of<TProvider>(context);
     return Column(children: [
+      Appbarcom(
+        username: prov.username,
+      ),
       Padding(
         padding: const EdgeInsets.only(top: 15, left: 20, right: 20),
         child: TextField(

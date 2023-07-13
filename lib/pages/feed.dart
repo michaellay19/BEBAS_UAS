@@ -1,3 +1,4 @@
+import 'package:bebas_uas/components/appbar.dart';
 import 'package:bebas_uas/provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -18,6 +19,9 @@ class _FeedState extends State<Feed> {
     final prov = Provider.of<TProvider>(context);
     return Column(
       children: [
+        Appbarcom(
+          username: prov.username,
+        ),
         Padding(
           padding: const EdgeInsets.only(top: 15, left: 20, right: 20),
           child: TextField(

@@ -1,6 +1,7 @@
 import 'package:bebas_uas/components/appbar.dart';
 import 'package:bebas_uas/pages/feed.dart';
 import 'package:bebas_uas/pages/home.dart';
+import 'package:bebas_uas/pages/setting.dart';
 import 'package:bebas_uas/provider/provider.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -29,10 +30,7 @@ class _HalamanUtamaState extends State<HalamanUtama> {
       'Index 2: School',
       style: optionStyle,
     ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+    SettingPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -43,15 +41,12 @@ class _HalamanUtamaState extends State<HalamanUtama> {
 
   @override
   Widget build(BuildContext context) {
-      final prov = Provider.of<TProvider>(context);
+    final prov = Provider.of<TProvider>(context);
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 31, 195, 36),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Appbarcom(
-              username: prov.username,
-            ),
             Center(
               child: _widgetOptions.elementAt(_selectedIndex),
             ),
@@ -80,7 +75,7 @@ class _HalamanUtamaState extends State<HalamanUtama> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
-            label: 'Transaksi',
+            label: 'Setting',
           ),
         ],
         currentIndex: _selectedIndex,

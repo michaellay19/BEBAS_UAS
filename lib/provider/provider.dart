@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TProvider extends ChangeNotifier {
-  String username = "";
+  String username = "Guest";
   List listfeedcomment = [
     {
       "username": "Louis Lie",
