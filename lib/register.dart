@@ -15,6 +15,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmController = TextEditingController();
+  DateTime _date = DateTime.now();
 
   bool? checkedValue = false;
 
@@ -48,19 +49,12 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: TextField(
+              child: TextFormField(
                 controller: usernameController,
-                obscureText: false,
-                decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white)),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey.shade400),
-                    ),
-                    fillColor: Colors.grey[250],
-                    filled: true,
-                    hintText: 'Username',
-                    hintStyle: TextStyle(color: Colors.grey[500])),
+                decoration: const InputDecoration(
+                  hintText: 'Username',
+                  labelText: 'Username *',
+                ),
               ),
             ),
             SizedBox(
@@ -68,19 +62,13 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: TextField(
+              child: TextFormField(
                 controller: passwordController,
                 obscureText: true,
-                decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white)),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey.shade400),
-                    ),
-                    fillColor: Colors.grey[250],
-                    filled: true,
-                    hintText: 'Password',
-                    hintStyle: TextStyle(color: Colors.grey[500])),
+                decoration: const InputDecoration(
+                  hintText: 'Password',
+                  labelText: 'Password *',
+                ),
               ),
             ),
             SizedBox(
@@ -88,19 +76,61 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: TextField(
+              child: TextFormField(
                 controller: confirmController,
                 obscureText: true,
-                decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white)),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey.shade400),
-                    ),
-                    fillColor: Colors.grey[250],
-                    filled: true,
-                    hintText: 'Konfirmasi Password',
-                    hintStyle: TextStyle(color: Colors.grey[500])),
+                decoration: const InputDecoration(
+                  hintText: 'Password',
+                  labelText: 'Konfirmasi Password *',
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: InputDatePickerFormField(
+                          initialDate: _date,
+                          firstDate: DateTime(1990),
+                          lastDate: DateTime(2250),
+                          onDateSubmitted: (date) {
+                            setState(() {
+                              _date = date;
+                              print(_date);
+                            });
+                          },
+                          fieldLabelText: 'Tanggal Lahir',
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () async {
+                          var res = await showDatePicker(
+                              context: context,
+                              initialDate: _date,
+                              firstDate: DateTime(1900),
+                              lastDate: DateTime(2500));
+
+                          if (res != null) {
+                            setState(() {
+                              _date = res;
+                            });
+                          }
+                        },
+                        icon: const Icon(Icons.date_range),
+                      )
+                    ],
+                  ),
+                  const Divider(),
+                ],
               ),
             ),
             SizedBox(
