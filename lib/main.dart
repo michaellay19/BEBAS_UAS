@@ -1,3 +1,4 @@
+import 'package:bebas_uas/aboutus.dart';
 import 'package:bebas_uas/provider/provider.dart';
 import 'package:bebas_uas/login.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: AboutUsPage(),
     );
   }
 }
