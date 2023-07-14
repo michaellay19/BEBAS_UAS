@@ -1,8 +1,5 @@
-import 'package:bebas_uas/halaman_utama.dart';
-import 'package:bebas_uas/pages/setting.dart';
 import 'package:bebas_uas/provider/provider.dart';
 import 'package:bebas_uas/login.dart';
-import 'package:bebas_uas/topup.dart';
 import 'package:flutter/material.dart';
 import "package:provider/provider.dart";
 
@@ -19,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
     );

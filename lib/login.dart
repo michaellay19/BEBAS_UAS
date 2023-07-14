@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: TextField(
                 controller: passwordController,
-                obscureText: false,
+                obscureText: true,
                 decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white)),
@@ -143,22 +143,6 @@ class _LoginPageState extends State<LoginPage> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => HalamanUtama()));
                 }
-
-                // prov.login(usernameController.text, passwordController.text);
-                // if (prov.data == null) {
-                //   showDialog(
-                //     context: context,
-                //     builder: (context) => errorDialog(context),
-                //   );
-                // } else {
-                //   Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //       builder: (context) => LayoutScreen(),
-                //     ),
-                //   );
-                // }
-                print('halo');
               },
               child: Container(
                 padding: const EdgeInsets.all(20),

@@ -4,6 +4,7 @@ import 'package:bebas_uas/pages/home.dart';
 import 'package:bebas_uas/pages/setting.dart';
 import 'package:bebas_uas/provider/provider.dart';
 import 'package:bebas_uas/topup.dart';
+import 'package:bebas_uas/wishlist.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
@@ -24,10 +25,7 @@ class _HalamanUtamaState extends State<HalamanUtama> {
     Home(),
     Feed(),
     TopUpPage(),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+    WishList(),
     SettingPage(),
   ];
 

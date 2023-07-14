@@ -1,3 +1,4 @@
+import 'package:bebas_uas/login.dart';
 import 'package:bebas_uas/pages/home.dart';
 import 'package:bebas_uas/provider/provider.dart';
 import 'package:flutter/material.dart';
@@ -157,7 +158,8 @@ class _SettingPageState extends State<SettingPage> {
               ListTile(
                 leading: Icon(Icons.settings_applications_outlined),
                 title: Text("Layanan Lainnya"),
-              ),Divider(),
+              ),
+              Divider(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -179,11 +181,20 @@ class _SettingPageState extends State<SettingPage> {
                 title: Text("Bantuan Tokopedia Care"),
               ),
               Divider(),
-              
               ListTile(
                 leading: Icon(Icons.code_outlined),
                 title: Text("Scan Kode QR"),
               ),
+              TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                      ),
+                    );
+                  },
+                  child: Text('Log out'))
             ],
           ),
         )
