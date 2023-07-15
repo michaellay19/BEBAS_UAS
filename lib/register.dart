@@ -157,10 +157,6 @@ class _RegisterPageState extends State<RegisterPage> {
                     context: context,
                     builder: (context) => successDialog(context),
                   );
-                  prov.username = usernameController.text;
-                  prov.saldo = 100000;
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AboutUsPage()));
                 }
               },
               child: Container(

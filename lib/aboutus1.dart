@@ -1,4 +1,6 @@
 import 'package:bebas_uas/halaman_utama.dart';
+import 'package:bebas_uas/login.dart';
+import 'package:bebas_uas/register.dart';
 import 'package:flutter/material.dart';
 
 class AboutUsPage2 extends StatefulWidget {
@@ -73,17 +75,32 @@ class _AboutUsPage2State extends State<AboutUsPage2> {
               padding: EdgeInsets.all(20.0),
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.white,
                       minimumSize: const Size.fromHeight(50)),
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HalamanUtama()),
+                      MaterialPageRoute(builder: (context) => LoginPage()),
                     );
                   },
                   child: Text(
-                    'Selamat Berbelanja....',
-                    style: TextStyle(fontSize: 25.0, color: Colors.black),
+                    'Login',
+                    style: TextStyle(fontSize: 25.0),
+                  )),
+            ),
+            Padding(
+              padding: EdgeInsets.all(20.0),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: const Size.fromHeight(50)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => RegisterPage()),
+                    );
+                  },
+                  child: Text(
+                    'Daftar',
+                    style: TextStyle(fontSize: 25.0),
                   )),
             ),
           ],

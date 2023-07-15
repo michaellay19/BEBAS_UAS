@@ -71,7 +71,6 @@ class _AboutUsPageState extends State<AboutUsPage> {
               padding: EdgeInsets.all(20.0),
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.white,
                       minimumSize: const Size.fromHeight(50)),
                   onPressed: () {
                     Navigator.push(
@@ -80,8 +79,8 @@ class _AboutUsPageState extends State<AboutUsPage> {
                     );
                   },
                   child: Text(
-                    'Next',
-                    style: TextStyle(fontSize: 25.0, color: Colors.black),
+                    'Selanjutnya',
+                    style: TextStyle(fontSize: 25.0),
                   )),
             ),
           ],

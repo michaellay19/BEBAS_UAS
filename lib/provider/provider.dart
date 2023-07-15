@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TProvider extends ChangeNotifier {
   String username = "";
-  int saldo = 0;
+  int saldo = 100000;
   String pin = "0000";
   String saldosementara = "";
   String statement = "";
@@ -30,7 +30,7 @@ class TProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-void minsaldo(int saldomasuk) {
+  void minsaldo(int saldomasuk) {
     saldo = saldo - saldomasuk;
     notifyListeners();
   }

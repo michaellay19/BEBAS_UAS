@@ -186,15 +186,21 @@ class _SettingPageState extends State<SettingPage> {
                 title: Text("Scan Kode QR"),
               ),
               TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginPage(),
-                      ),
-                    );
-                  },
-                  child: Text('Log out'))
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).pop();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    ),
+                  );
+                },
+                child: Text(
+                  'Log out',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
             ],
           ),
         )
